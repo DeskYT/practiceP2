@@ -4,7 +4,7 @@ import VueAxios from 'vue-axios'
 console.log(Vue)
 Vue.use(VueAxios, axios)
 
-/*
+
 new Vue({
     el: '#app',
     data: {
@@ -12,6 +12,9 @@ new Vue({
         search: ''
     },
     mounted: function (){
-        this.students = students;
+        Vue.axios.get("http://46.101.212.195:3000/students").then(response => {
+           console.log(response.data)
+           this.students = response.data
+        });
     }
-})*/
+})
