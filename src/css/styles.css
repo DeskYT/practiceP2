@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+#app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+table { margin-top: 15px}
+th, td { padding: 5px 10px; text-align: center}
+.btn {
+    font-size: 16px;
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 15px;
+    background-color: gray;
+    color: white;
+    outline: none;
+}
+
+.searchInput {
+    margin-top: 15px;
+    outline: none;
+    border: 1px solid #999999;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+.addStudentForm{
+    flex-direction: column;
+    display: none;
+}
+.addStudentForm > *{
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 5px;
+    outline: none;
+}
+.exclude{
+    display: none;
+}

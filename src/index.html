@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="./css/styles.css">
     <script defer src="main.js"></script>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <h1>Студенти</h1>
+
+        <input class="searchInput" type="text" v-model = "coincidence" placeholder="Поиск" size = 35>
+        <table border = '1'>
+            <thead>
+            <th>№</th>
+            <th>ФИО</th>
+            <th>Группа</th>
+            <th>Сдал\Не сдал</th>
+            </thead>
+            <tbody>
+            <tr v-for = "(stud, index) in students" :class = "stud.name.toLowerCase().includes(coincidence.toLowerCase()) || stud.group.toLowerCase().includes(coincidence.toLowerCase()) ? '' : 'exclude'">
+                <td>{{ index }}</td>
+                <td>{{ stud.name }}</td>
+                <td>{{ stud.group }}</td>
+                <td>
+                    <input type="checkbox" :checked = "stud.offset" disabled>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
